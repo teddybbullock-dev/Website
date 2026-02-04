@@ -7,14 +7,35 @@
 </head>
 <body>
 
-  <h1>My Store</h1>
+  <body>
+  <h1>Hello, it works.</h1>
 
-  <div class="product">
-    <h2>Cool Product</h2>
-    <p>$10</p>
-    <button id="buyBtn">Add to Cart</button>
-  </div>
+  <input type="text" id="searchBar" placeholder="Search..." />
+  <button onclick="search()">Search</button>
 
-  <script src="script.js"></script>
+  <ul id="results">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Cherry</li>
+    <li>Date</li>
+    <li>Elderberry</li>
+  </ul>
+
+  <script>
+    function search() {
+      const query = document.getElementById('searchBar').value.toLowerCase();
+      const items = document.querySelectorAll('#results li');
+
+      items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(query)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+
 </body>
 </html>
