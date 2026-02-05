@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <body>
+  <h1>Hello, it works.</h1>
+
+  <input type="text" id="searchBar" placeholder="Search..." />
+  <button onclick="search()">Search</button>
+
+  <ul id="results">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Cherry</li>
+    <li>Date</li>
+    <li>Elderberry</li>
+  </ul>
+
+  <script>
+    function search() {
+      const query = document.getElementById('searchBar').value.toLowerCase();
+      const items = document.querySelectorAll('#results li');
+
+      items.forEach(item => {
+        if (item.textContent.toLowerCase().includes(query)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+
+</body>
+</html>
